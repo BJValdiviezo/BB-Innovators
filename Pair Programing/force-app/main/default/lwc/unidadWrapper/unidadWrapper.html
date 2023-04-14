@@ -1,0 +1,45 @@
+<template>
+    <lightning-card class="bear-tile">
+
+        <div class="margenes">
+            <div class="slds-grid">
+                <h3 slot="title" class="slds-size_2-of-3">
+                    <img class="imagen-Modulo"
+                        src="https://cdn.discordapp.com/attachments/1087057271776882721/1096116704565801091/Mouhammad_Create_icons_e-learning_for_app_3D_book_simple_book_p_9e2ff928-7e77-4775-b1ad-e713d4ec8d32-removebg-preview.png">&nbsp;{name}&emsp;
+                </h3>
+                <div class="slds-grid_vertical-align-start slds-size_1-of-3">
+                    <div class="slds-m-bottom_small slds-text-align--right">
+                        <span class="tds-badge slds-badge slds-grid_vertical-align-end">{points} Puntos </span>
+                    </div>
+                    <div class=" slds-text-align--right slds-text-title_bold">
+                        {time} Minutos
+                    </div>&nbsp;&nbsp;
+                </div>
+            </div>
+
+
+
+            <div class="margenes">
+                <lightning-layout multiple-rows class="slds-p-right_small">
+                    <p class="slds-text-heading_small">{description}</p>
+                </lightning-layout>&nbsp;&emsp;
+            </div>
+            <div class="slds-box slds-box_x-small boxRespuestas">
+                <template for:each={preguntas} for:item="xxx">
+                    <div key={xxx.Id}>
+                        <h1 slot="title" class="title">
+                            <lightning-icon icon-name="standard:knowledge"
+                                size="small"></lightning-icon>&nbsp;{xxx.Contenido__c}&emsp;
+                        </h1>
+                        <template if:true={xxx.Respuestas__r} for:each={xxx.Respuestas__r} for:item="answer">
+                            <c-respuesta key={answer.Id} answer={answer} question={xxx} onoptionselect={answerSelected}
+                                option-selected={optionSelected}></c-respuesta>
+                        </template>
+                    </div>
+                </template>
+                <lightning-button label="Submit" onclick={handleSubmit}></lightning-button>
+            </div>
+            
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,47 @@
+
+.bear-tile {
+	border: 1px solid #dbad82;
+	border-radius: .25rem;
+	background-color: #fae8d2;
+
+}
+.imagen-Modulo{
+    width: 100px;
+    height: 100px;
+}
+h3{
+    font-size: 20px;
+    font-weight: bold;
+}
+.margenes{
+	margin-left: 3%;
+	margin-right: 3%;
+}
+
+:host {
+	--sds-c-card-color-background: linear-gradient(180deg, #e9eaf0 80%, #69b3ef 100%);
+}
+.title{
+    font-size: 15px;
+    font-weight: bold;
+}
+.boxRespuestas{
+    margin: 20px 20px;
+    padding: 20px 30px;
+    border-radius: 5px;
+    border-color: #252525;
+    border-width: 2px;
+}
+.tds-badge {
+    text-transform: uppercase;
+    letter-spacing: .0625em;
+}
+.slds-badge {
+    color: #252525;
+    background-color: #7babea;
+    line-height: 1.5;
+    padding: 0.4rem 0.70rem;
+    font-weight: 700;
+    font-size: .75rem;
+    position: relative;
+}

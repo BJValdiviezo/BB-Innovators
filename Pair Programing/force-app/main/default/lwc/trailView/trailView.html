@@ -1,0 +1,58 @@
+<template>
+    <lightning-card class="bear-tile" > 
+
+        <div class="margenes"> 
+            <div class="slds-grid">
+                <div class="slds-text-align--start slds-col slds-size_2-of-3">
+                    <h3 slot="title">
+                        <img class="imagen" src="https://cdn.discordapp.com/attachments/1087057271776882721/1096066076468588624/Mouhammad_Create_icons_e-learning_for_app_3D_physics_simple_11206e0e-1210-43ec-8bcf-6e35acc5aadd-removebg-preview.png">&nbsp;{name}&emsp;
+                    </h3>
+                </div> 
+                <div class="slds-grid_vertical-align-start slds-col slds-size_1-of-3">
+                    <div class="slds-m-bottom_small slds-text-align--right">
+                        <span class="tds-badge slds-badge ">+{points} Puntos </span>                       
+                    </div>
+                    <div class=" slds-grid_vertical-align-start slds-text-align--right slds-text-title_bold">
+                        ~{time} Minutos
+                    </div>
+                </div>
+                
+            </div>  
+            
+        
+            <div class="slds-truncate slds-text-heading_medium">
+                <slot>{description}</slot>
+            </div>
+
+            <div class="margenProgress">
+                <div class="slds-m-right_x-small">{progress}%</div>
+                <lightning-progress-bar value={progress} size="large" variant="circular"></lightning-progress-bar>&emsp;
+            </div>
+            <div class="slds-box slds-box_x-small slds-theme_alert-texture">
+                <!-- <lightning-card>
+                    <h3 slot="title" style="display: inline-block; text-align : center; margin: 0 auto">
+                        <img class="imagen-Modulo" src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/projects/quickstart-vscode-salesforce/a884f9ae6802649bf19065787ec0bb29_badge.png">&emsp;
+                        Modulo
+                    </h3>&nbsp;
+                </lightning-card> -->
+                <!-- class="slds-box slds-box_x-small" -->
+                    <template for:each={modulos} for:item="xxx"> 
+                        <div  key={xxx.Id} class="slds-box slds-box_x-small  slds-theme_shade modulos">
+                            <lightning-card>
+                                <h3 slot="title" style="display: inline-block; text-align : center; margin: 0 auto">
+                                    <img class="imagen-Modulo" src="https://cdn.discordapp.com/attachments/1087057271776882721/1096117363214131321/Mouhammad_Create_icons_e-learning_for_app_3D_chimical_simple_4f654c51-407e-4ad3-a3d9-bb848b3f690f__1_-removebg-preview.png">&emsp;
+                                    Modulo
+                                </h3>&nbsp;
+                            </lightning-card>
+                            <c-modulo-view checkunit ={checkunit} checkmodule={checkmodule} name={name} time={time} points={points} description={description} modulo={xxx}> </c-modulo-view>&emsp;    
+                            
+                        </div>
+                        <div class="spamDot" key={xxx.Id}>
+                        </div>
+                        
+                        </template>
+            </div>
+        </div>
+
+    </lightning-card>
+</template>
